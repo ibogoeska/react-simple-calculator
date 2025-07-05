@@ -1,0 +1,156 @@
+$bg-color: #f6f6f6;
+$btn-color: #ffffff;
+$accent-color: #ffc07f;
+$equal-color: #ffbe78;
+$font-color: #444;
+$display-font-size: 2rem;
+$blue-circle-color: #59b8ff;
+$orange-circle-color: #ffca89;
+$red-circle-color: #ff6880;
+$green-circle-color: #3ef4c4;
+
+body {
+  background: $bg-color;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+
+  // Background colored circles
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at 30% 30%, #4fb2ff, #006eff);
+    top: -150px;
+    left: -150px;
+  }
+
+  &::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle at 70% 70%, #5fffc0, #00ffb8);
+    bottom: -100px;
+    right: -100px;
+  }
+
+  .blue-circle {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $blue-circle-color;
+    border-bottom-right-radius: 100%;
+  }
+  .orange-circle {
+    width: 20%;
+    height: 30%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $orange-circle-color;
+    border-bottom-left-radius: 100%;
+  }
+
+  .red-circle {
+    width: 15%;
+    height: 25%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $red-circle-color;
+    border-top-right-radius: 100%;
+  }
+
+  .green-circle {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: $green-circle-color;
+    border-top-left-radius: 100%;
+  }
+
+  #root {
+    z-index: 1000;
+  }
+}
+
+.calculator {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.display {
+  font-size: $display-font-size;
+  color: $font-color;
+  text-align: right;
+  padding: 20px 10px 10px;
+  height: 30px;
+}
+
+.result {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $font-color;
+  text-align: right;
+  padding: 0 10px 30px;
+  height: 40px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  button {
+    background: $btn-color;
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    font-size: 1.2rem;
+    color: $font-color;
+    cursor: pointer;
+    transition: 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &.equals {
+      background: $equal-color;
+      border-radius: 30px;
+      grid-column: span 2;
+      width: 100%;
+    }
+
+    &.operator {
+      background: #f0f0f0;
+    }
+
+    &.clear,
+    &.clear-all {
+      background: #e0e0e0;
+    }
+  }
+}
