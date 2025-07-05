@@ -2,7 +2,7 @@
 
 A stylish and responsive calculator built with **React**, **TypeScript**, and **SCSS** — featuring custom operator parsing and safe math evaluation using `mathjs`.
 
-![screenshot]("./public/screenshots/calculator-screenshot.png") <!-- Optional: Add your screenshot here -->
+![Screenshot](/public/screenshots/calculator-screenshot.png) 
 
 ---
 
@@ -38,28 +38,21 @@ git clone https://github.com/ibogoeska/react-simple-calculator.git .
 
 ### 2. Install dependencies
 
+```
 bash
 
 npm install
+```
 
 ### 3. Run the app
 
+```
 bash
 
 npm run dev
 
-# 🧠 Folder Structure
+```
 
-src/
-├── components/ # Reusable UI components
-│ ├── Calculator.tsx
-│ ├── Display.tsx
-│ ├── Button.tsx
-│ └── ButtonGrid.tsx
-├── styles/
-│ └── calculator.scss
-├── App.tsx # Main App container
-└── index.tsx # React entry point
 
 # ✅ To Do / Ideas
 
